@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Gallery</title>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <div class="logo-image">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Critical_Role_logo%2C_from_social_media_2020.jpg/250px-Critical_Role_logo%2C_from_social_media_2020.jpg" class="img-fluid">
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="dice.html">Dice Roller</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="dnd.html">D&D</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="gallery.html" tabindex="-1">Gallery</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="https://www.google.com/search" method="GET">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search_button">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+        <img class="slide center" src="https://variety.com/wp-content/uploads/2021/09/Critical-Role-Campaign-3-Premiere.jpg">
+        <img class="slide center" src="https://image.cnbcfm.com/api/v1/image/106436679-1583933818990criticalrole_c1e100_1024pxcropped.png">
+        <img class="slide center" src="https://ksr-ugc.imgix.net/assets/024/180/681/20b0b3846c5175714b0cf75822d46e00_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1550868442&auto=format&frame=1&q=92&s=7da95456f3352fcd4aed46becb921b94">
+        <img class="slide center" src="https://i.ytimg.com/vi/bE2EUHzr0Fs/maxresdefault.jpg">
+        <div style="position: absolute; top: 50%; left: 16%;"><button id="down_button">&#10094;</button></div>
+        <div style="position: absolute; right: 16%; top: 50%;"><button id="up_button">&#10095;</button></div>
+      </div>
+      <script>
+        var slideIndex = 0;
+        var slides = document.getElementsByClassName("slide");
+        for (let i = 1; i < slides.length; i++)
+        {
+          slides[i].style.display = "none";
+        }
+        function changeSlide() {
+          if (slideIndex >= slides.length) {
+            slideIndex = 0;
+            slides[slideIndex].style.display = "block";
+          }
+          else if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+            slides[slideIndex].style.display = "block";
+          } 
+          else {
+            slides[slideIndex].style.display = "block";
+          }
+        }
+        function slideClick(x) {
+          slides[slideIndex].style.display = "none";
+          slideIndex += x;
+          changeSlide();
+        }
+        document.getElementById('down_button').addEventListener("click", slideClick.bind(null, -1));
+        document.getElementById('up_button').addEventListener("click", slideClick.bind(null, 1));
+        </script>
+      <p style="text-align: center;"><small>Copyright &copy 2021 Critical Role</small></p>
+    </body>
+</html>

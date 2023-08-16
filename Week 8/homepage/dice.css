@@ -1,0 +1,19 @@
+.die {
+    width: 430px; 
+    height: 512px; 
+}
+.die_text {
+    font-size: 40px;
+}
+#d6 {
+    position: absolute; 
+    top: 58%; 
+    left: 57%; 
+    transform: translate(-50%, -50%);
+}
+#d8 {
+    position: absolute; 
+    top: 35%; 
+    left: 53%; 
+    transform: translate(-50%, -50%);
+}

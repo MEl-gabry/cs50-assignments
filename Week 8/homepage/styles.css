@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+.logo-image {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+}
+.flex-container {
+    display: flex;
+}
+.flex-child {
+    flex: 1;
+}  
+.container {
+    position: relative;
+}
+.centered {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+.centered_text {
+    margin-top: 6rem;
+    padding-left: 50px;
+    padding-right: 50px;
+    line-height: 1.9em;
+}
+.column {
+    float: left;
+    width: 33.33%;
+}
